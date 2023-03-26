@@ -1,7 +1,6 @@
-import React, {Component, createRef, ReactNode} from 'react';
-import {View, ViewStyle} from 'react-native';
-import {TouchableOpacity} from 'react-native';
-import {triggerEvent} from './Utils';
+import React, { Component, createRef, ReactNode } from "react";
+import { View, ViewStyle, Platform, TouchableOpacity } from "react-native";
+import { triggerEvent } from "./Utils";
 
 type TooltipProps = {
   backgroundColor?: String;
@@ -29,10 +28,12 @@ class Tooltip extends Component<TooltipProps> {
     });
   };
 
+  osSpecificVerticalOffset = Platform.OS === "ios" ? 47 : 0;
+
   triggerShowTooltip = (pageX: number, pageY: number, height: number) => {
-    triggerEvent('showTooltip', {
+    triggerEvent("showTooltip", {
       position: {
-        top: pageY + height,
+        top: pageY + height - this.osSpecificVerticalOffset,
         left: pageX,
       },
       backgroundColor: this.props?.backgroundColor,
