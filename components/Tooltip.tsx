@@ -7,7 +7,7 @@ type TooltipProps = {
   customContainerStyle?: ViewStyle;
   popover?: JSX.Element;
   offsetHorizontal?: Number;
-  toolTipArrowOffset?: Number;
+  tooltipArrowOffset?: Number;
   children?: ReactNode;
   arrowHeight?: number;
   zIndex?: number;
@@ -40,7 +40,7 @@ class Tooltip extends Component<TooltipProps> {
       customContainerStyle: this.props?.customContainerStyle,
       popover: this.props?.popover,
       offsetHorizontal: this.props?.offsetHorizontal,
-      toolTipArrowOffset: this.props?.toolTipArrowOffset,
+      tooltipArrowOffset: this.props?.tooltipArrowOffset,
       arrowHeight: this.props?.arrowHeight,
       zIndex: this.props?.zIndex,
     });

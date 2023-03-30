@@ -1,6 +1,6 @@
-import React, {useState, useEffect, FC, PropsWithChildren} from 'react';
-import {View, StyleSheet, BackHandler, ViewStyle} from 'react-native';
-import {addEventListener, removeEventListener} from './Utils';
+import React, { useState, useEffect, FC, PropsWithChildren } from "react";
+import { View, StyleSheet, BackHandler, ViewStyle } from "react-native";
+import { addEventListener, removeEventListener } from "./Utils";
 
 type TooltipConfig = {
   backgroundColor?: String;
@@ -9,14 +9,14 @@ type TooltipConfig = {
     top: number;
     left: number;
   };
-  toolTipArrowOffset?: number;
+  tooltipArrowOffset?: number;
   popover?: JSX.Element;
   arrowHeight?: number;
   offsetHorizontal?: number;
   zIndex?: number;
 };
 
-const TooltipProvider: FC<PropsWithChildren> = props => {
+const TooltipProvider: FC<PropsWithChildren> = (props) => {
   const [tipVisible, setTipVisible] = useState<boolean>(false);
   const [config, setConfig] = useState<TooltipConfig>({});
 
@@ -39,13 +39,13 @@ const TooltipProvider: FC<PropsWithChildren> = props => {
   };
 
   useEffect(() => {
-    addEventListener('showTooltip', showToolTip);
+    addEventListener("showTooltip", showToolTip);
     const backHandler = BackHandler.addEventListener(
-      'hardwareBackPress',
-      hideToolTip,
+      "hardwareBackPress",
+      hideToolTip
     );
     return () => {
-      removeEventListener('showTooltip');
+      removeEventListener("showTooltip");
       backHandler.remove();
     };
   });
@@ -55,13 +55,13 @@ const TooltipProvider: FC<PropsWithChildren> = props => {
     const triangleStyle = {
       width: 0,
       height: 0,
-      backgroundColor: 'transparent',
-      borderStyle: 'solid',
+      backgroundColor: "transparent",
+      borderStyle: "solid",
       borderLeftWidth: (side / 2.0) * 1.4,
       borderRightWidth: (side / 2.0) * 1.4,
       borderBottomWidth: height,
-      borderLeftColor: 'transparent',
-      borderRightColor: 'transparent',
+      borderLeftColor: "transparent",
+      borderRightColor: "transparent",
       borderBottomColor:
         config?.backgroundColor ||
         config?.customContainerStyle?.backgroundColor,
@@ -73,14 +73,14 @@ const TooltipProvider: FC<PropsWithChildren> = props => {
   const renderToolTip = () => {
     const toolTipStyle = {
       topWrapper: {
-        position: 'absolute',
+        position: "absolute",
         top: config?.position?.top || 0,
         left: (config?.position?.left || 0) + (config?.offsetHorizontal || 0),
         zIndex: config?.zIndex || DEFAULT_STATE.zIndex,
       },
       triangle: {
         height: DEFAULT_STATE.triangleHeight,
-        backgroundColor: 'transparent',
+        backgroundColor: "transparent",
       },
       container: [
         {
@@ -94,7 +94,7 @@ const TooltipProvider: FC<PropsWithChildren> = props => {
         <View style={toolTipStyle.triangle}>
           {getToolTipTriangle(
             config?.arrowHeight || DEFAULT_STATE.triangleHeight,
-            config?.toolTipArrowOffset || DEFAULT_STATE.triangleOffset,
+            config?.tooltipArrowOffset || DEFAULT_STATE.triangleOffset
           )}
         </View>
         <View style={toolTipStyle.container}>{config?.popover}</View>
