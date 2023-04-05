@@ -1,69 +1,69 @@
-# TooltipHandler
-
 # Light-Weight React Native Tooltip
 
-<p>Tooltip is a UI which is shown when the user clicks on a particular compoment. After that 
-when the user clicks(touches) anywhere outside the component, the tooltip vanishes. This tooltip 
-is lightweight, easy to use and very performance-efficient as it doesn't use any type of modal. 
-</p>
+A smooth & cross-platfrom tooltip component for React Native. A light weight library that is highly customisable and can be used without any performance drop. It is a non-modal based solution.
 
 ## Table of Contents
 
-- [Quickstart ⚡️](#quickstart-⚡️)
+- [Installation](#installation)
+- [Quickstart](#quickstart)
 - [Behaviour](#behaviour)
-- [Screenshot](#screenshot)
+- [Demo](#demo)
 - [Props](#props)
 - [How it works](#how-it-works)
 
-## Quickstart ⚡️
-
-**1. Install**
+## Installation
 
 ```console
 npm install rn-tooltip
 ```
 
+or
+
 ```console
 yarn add rn-tooltip
 ```
 
-**2. Imports**
+## Quickstart
+
+Enable the Tooltip feature by wrapping your root component with `<TooltipProvider>` at the App level.
+Wrap the component for which you want tooltip functionality with `<Tooltip>`. Pass appropriate props.
 
 ```javascript
-import { TooltipProvider, Toolitp } from "rn-tooltip";
+import { TooltipProvider, Tooltip } from "rn-tooltip";
+
+const App = () => {
+  return (
+    <TooltipProvider>
+      <View>
+        <Text>Tooltip example</Text>
+        <Tooltip
+          popover={<Text> This is a tooltip. Click outside to dismiss.</Text>}
+          backgroundColor={"aqua"}
+          customContainerStyle={styles.customContainerStyle}
+        >
+          <Text>Click on me to see tooltip</Text>
+        </Tooltip>
+      </View>
+    </TooltipProvider>
+  );
+};
+
+export default App;
+
+const styles = StyleSheet.create({
+  customContainerStyle: { borderRadius: 10, padding: 5 },
+});
 ```
-
-**3. Usage**
-
-- Enable the Tooltip feature by wrapping your app-content with `<TooltipProvider>` at the App level.
-  ex:
-
-  ```javascript
-  import { TooltipProvider } from "rn-tooltip";
-  . . .
-  function App(): JSX.Element {
-    return <TooltipProvider>. . .</TooltipProvider>;
-  }
-  ```
-
-- Wrap the component for which you want tooltip functionality with `<Tooltip>`.
-  Pass appropriate props.
-  ex:
-  ```javascript
-  <Tooltip
-    popover={<Text> This is a tooltip. Click outside to dismiss.</Text>}
-    backgroundColor={"blue"}
-  >
-    <Text>Click on me to show tooltip.</Text>
-  </Tooltip>
-  ```
 
 ## Behaviour
 
-If the user does nothing, the text component(Click on me to show tooltip) is shown as it is. When the user clicks on the component, a tooltip is visible right below the component with an arrow pointing towards the component. The tooltip has a container which wraps the popover text component(This is a tooltip....). We can set the style of this wrapper container by using the customContainerStyle prop. Now whenever the user clicks(touches) anywhere else on the screen, the
-tooltip vanishes.
+If the user will click on the `<Text>` component, the tooltip will be shown with the given component in `popover` props.
+The Tooltip UI can also be modified via `customContainerStyle` props.
+Now, if touched anywhere on the screen, the Tooltip will hide.
 
-## Screnshot
+## Demo
+
+ <img height ="400" src="example.gif" />
 
 ## Props
 
