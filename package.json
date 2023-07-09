@@ -1,0 +1,30 @@
+{
+  "name": "rn-lightweight-tooltip",
+  "version": "1.0.0",
+  "description": "A smooth & cross-platfrom tooltip component for React Native. A light weight library that is highly customisable and can be used without any performance drop. It is a non-modal based solution.",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tooltip",
+    "infotip",
+    "lightweight",
+    "react-native",
+    "modal",
+    "walkthrough",
+    "ui",
+    "android",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChinmayKarnik/Tooltip.git"
+  },
+  "author": "Chinmay Karnik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChinmayKarnik/Tooltip/issues"
+  },
+  "homepage": "https://github.com/ChinmayKarnik/Tooltip#readme"
+}
