@@ -115,5 +115,6 @@ export default TooltipProvider;
 const styles = StyleSheet.create({
   wrapperView: {
     flex: 1,
+    backgroundColor: "transparent",
   },
 });

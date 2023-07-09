@@ -14,13 +14,13 @@ A smooth & cross-platfrom tooltip component for React Native. A light weight lib
 ## Installation
 
 ```console
-npm install rn-tooltip
+npm install rn-lightweight-tooltip
 ```
 
 or
 
 ```console
-yarn add rn-tooltip
+yarn add rn-lightweight-tooltip
 ```
 
 ## Quickstart
@@ -29,7 +29,7 @@ Enable the Tooltip feature by wrapping your root component with `<TooltipProvide
 Wrap the component for which you want tooltip functionality with `<Tooltip>`. Pass appropriate props.
 
 ```javascript
-import { TooltipProvider, Tooltip } from "rn-tooltip";
+import { TooltipProvider, Tooltip } from "rn-lightweight-tooltip";
 
 const App = () => {
   return (
@@ -67,15 +67,15 @@ Now, if touched anywhere on the screen, the Tooltip will hide.
 
 ## Props
 
-| Prop Name            | Type            | Default value                            | Description                                                                                                                                   |
-| -------------------- | --------------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| popover              | JSX.element     | <></>                                    | The tooltip component which is shown when user clicks on the component wrapped under Tooltip.                                                 |
-| customContainerStyle | React.ViewStyle | {backgroundColor:props?.backgroundColor} | The style of the container which covers the popover component                                                                                 |
-| backgroundColor      | String          | 'white'                                  | Color of the arrow which points towards the clickable component. Also the default background color of the container of the popover component. |
-| offsetHorizontal     | Number          | 0                                        | Used to adjust the position of the tooltip horizontally. A positive offset will shift the tooltip towards the right                           |
-| tooltipArrowOffset   | Number          | 25                                       | The distance of the arrow from the left-most end of the popover container                                                                     |
-| arrowHeight          | Number          | 8                                        | The height of the arrow which points towards the clickable component.                                                                         |
-| zIndex               | Number          | 999999                                   | The z-Index of the popover component                                                                                                          |
+| Prop Name            | Type            | Default value                            | Description                                                                                                         |
+| -------------------- | --------------- | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| popover              | JSX.element     | <></>                                    | The tooltip component which is shown when user clicks on the component wrapped under Tooltip.                       |
+| customContainerStyle | React.ViewStyle | {backgroundColor:props?.backgroundColor} | The style of the container which covers the popover component                                                       |
+| backgroundColor      | String          | 'white'                                  | Background color of the container which covers the popover component                                                |
+| offsetHorizontal     | Number          | 0                                        | Used to adjust the position of the tooltip horizontally. A positive offset will shift the tooltip towards the right |
+| tooltipArrowOffset   | Number          | 25                                       | The distance of the arrow from the left-most end of the popover container                                           |
+| arrowHeight          | Number          | 8                                        | The height of the arrow which points towards the clickable component.                                               |
+| zIndex               | Number          | 999999                                   | The z-Index of the popover component                                                                                |
 
 ## How it works
 
