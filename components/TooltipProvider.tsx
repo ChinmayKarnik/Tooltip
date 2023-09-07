@@ -14,6 +14,7 @@ type TooltipConfig = {
   arrowHeight?: number;
   offsetHorizontal?: number;
   zIndex?: number;
+  showArrow?: boolean;
 };
 
 const TooltipProvider: FC<PropsWithChildren> = (props) => {
@@ -91,12 +92,14 @@ const TooltipProvider: FC<PropsWithChildren> = (props) => {
     };
     return (
       <View style={toolTipStyle.topWrapper}>
-        <View style={toolTipStyle.triangle}>
-          {getToolTipTriangle(
-            config?.arrowHeight || DEFAULT_STATE.triangleHeight,
-            config?.tooltipArrowOffset || DEFAULT_STATE.triangleOffset
-          )}
-        </View>
+        {!!props.showArrow && (
+          <View style={toolTipStyle.triangle}>
+            {getToolTipTriangle(
+              config?.arrowHeight || DEFAULT_STATE.triangleHeight,
+              config?.tooltipArrowOffset || DEFAULT_STATE.triangleOffset
+            )}
+          </View>
+        )}
         <View style={toolTipStyle.container}>{config?.popover}</View>
       </View>
     );

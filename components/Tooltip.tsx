@@ -11,6 +11,7 @@ type TooltipProps = {
   children?: ReactNode;
   arrowHeight?: number;
   zIndex?: number;
+  showArrow?: boolean;
 };
 
 type VoidFunction = (...args: any[]) => void;
@@ -43,6 +44,7 @@ class Tooltip extends Component<TooltipProps> {
       tooltipArrowOffset: this.props?.tooltipArrowOffset,
       arrowHeight: this.props?.arrowHeight,
       zIndex: this.props?.zIndex,
+      showArrow: this.props?.showArrow || false,
     });
   };
 
