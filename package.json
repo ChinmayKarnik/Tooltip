@@ -1,6 +1,6 @@
 {
   "name": "rn-lightweight-tooltip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A smooth & cross-platfrom tooltip component for React Native. A light weight library that is highly customisable and can be used without any performance drop. It is a non-modal based solution.",
   "main": "index.ts",
   "scripts": {
