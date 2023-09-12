@@ -92,7 +92,7 @@ const TooltipProvider: FC<PropsWithChildren> = (props) => {
     };
     return (
       <View style={toolTipStyle.topWrapper}>
-        {!!props.showArrow && (
+        {!!config.showArrow && (
           <View style={toolTipStyle.triangle}>
             {getToolTipTriangle(
               config?.arrowHeight || DEFAULT_STATE.triangleHeight,

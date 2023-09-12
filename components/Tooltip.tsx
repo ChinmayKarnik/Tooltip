@@ -44,7 +44,7 @@ class Tooltip extends Component<TooltipProps> {
       tooltipArrowOffset: this.props?.tooltipArrowOffset,
       arrowHeight: this.props?.arrowHeight,
       zIndex: this.props?.zIndex,
-      showArrow: this.props?.showArrow || false,
+      showArrow: this.props?.showArrow === false ? false : true,
     });
   };
 
